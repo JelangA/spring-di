@@ -20,7 +20,7 @@ public class DependencyInjectionTest {
 
     @Test
     void testDi() {
-        Foo foo = applicationContext.getBean(Foo.class);
+        Foo foo = applicationContext.getBean("foo1",Foo.class);
         Wii wii = applicationContext.getBean(Wii.class);
         FooWii fooWii = applicationContext.getBean(FooWii.class);
 
@@ -39,6 +39,5 @@ public class DependencyInjectionTest {
         Assertions.assertSame(foo, fooWii.getFoo());
         Assertions.assertSame(wii, fooWii.getWii());
 
-//        Assertions.assertSame(foo, fooWii.getWii());
     }
 }
